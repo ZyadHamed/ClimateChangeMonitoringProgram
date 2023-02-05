@@ -1,0 +1,51 @@
+﻿<Page x:Class="Capstone_Program.GraphsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Capstone_Program"
+      xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="GraphsPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60px"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Button Margin="1" Name="btnAll" Click="btnToggle_Click">All</Button>
+            <Button Margin="1" Name="btnTemptime" Click="btnToggle_Click">Temp-Time</Button>
+            <Button Margin="1" Name="btnTDStime" Click="btnToggle_Click">TDS-Time</Button>
+            <Button Margin="1" Name="btnCO2time" Click="btnToggle_Click">CO2-Time</Button>
+            <Button Margin="1" Name="btnTempTDS" Click="btnToggle_Click">Temp-TDS</Button>
+        </StackPanel>
+        <Grid Name="gdChart" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+        
+        <lvc:CartesianChart Name="temptimechart" ZoomMode="Both" Margin="10">
+                
+                </lvc:CartesianChart>
+
+            <lvc:CartesianChart Name="tdstimechart" ZoomMode="Both" Grid.Column="1" Margin="10">
+
+                </lvc:CartesianChart>
+
+            <lvc:CartesianChart Name="co2timechart" ZoomMode="Both" Grid.Row="1" Grid.Column="0" Margin="10">
+
+            </lvc:CartesianChart>
+
+            <lvc:CartesianChart Name="tempTDSchart" ZoomMode="Both" Grid.Row="1" Grid.Column="1" Margin="10">
+
+        </lvc:CartesianChart>
+        </Grid>
+    </Grid>
+</Page>
